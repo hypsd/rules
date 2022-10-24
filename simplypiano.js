@@ -15,7 +15,6 @@
 [rewrite_local]
 
 ^https?:\/\/asla\.joytunes\.com\/443\/server\/asla\/accounts\/.* url script-response-body https://raw.githubusercontent.com/hypsd/rules/main/simplypiano.js
-
 [mitm] 
 
 hostname = *.joytunes.*
