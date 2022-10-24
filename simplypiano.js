@@ -3,7 +3,7 @@ hostname = *.joytunes.*
 
 [rewrite_local]
 
-^https?:\/\/asla\.joytunes\.com\/443\/server\/asla\/accounts\/*+$ url script-response-body 
+^https:\/\/asla\.joytunes\.com\/443\/server\/asla\/accounts\/*+$ url script-response-body 
 
 
 var body=$response.body;
