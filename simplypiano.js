@@ -4,11 +4,11 @@
   wx交流群：1077223830
 🫧脚本名称:Simply Piano 快速学习钢琴 解锁限制 A+
 🫧建议配合working copy一起食用
-✈️working copy下载地址https://apps.apple.com/app/id896694807✈️
+✈️working copy下载地址<a href='https://apps.apple.com/app/id896694807' target='_blank'>https://apps.apple.com/app/id896694807</a>✈️
 *******************************
 
 [rewrite_local]
-^https?:\/\/asla\.joytunes\.com\/server\/asla\/accounts\/**? url script-response-body piano.js
+^https?:\/\/asla\.joytunes\.com\/server\/asla\/accounts\/**? url script-response-body https://raw.githubusercontent.com/hypsd/rules/main/simplypiano.js
 
 
 [mitm]
