@@ -4,11 +4,11 @@
   wx交流群：1077223830
 🫧脚本名称:中信书院 用知识抵抗平庸 解锁会员 A+
 🫧建议配合working copy一起食用
-✈️working copy下载地址https://apps.apple.com/app/id896694807✈️
+✈️working copy下载地址<a href='https://apps.apple.com/app/id896694807' target='_blank'>https://apps.apple.com/app/id896694807</a>✈️
 *******************************
 
 [rewrite_local]
-^https?:\/\/book\.yunpub\.cn\/api\/v4_1_0\/getColumnHome|https?:\/\/book\.yunpub\.cn\/api\/v4_1_0\/getGoodsHome|https?:\/\/book\.yunpub\.cn\/api\/v4_1_0\/getHomeMore|https?:\/\/book\.yunpub\.cn\/api\/v4_1_0\/getGoodsHome|https?:\/\/book\.yunpub\.cn\/api\/v4_1_0\/getGoodsHomeNew|https?:\/\/v\.yunpub\.cn\/api\/graphql*? url script-response-body zxsy.js
+^https?:\/\/book\.yunpub\.cn\/api\/v4_1_0\/getColumnHome|https?:\/\/book\.yunpub\.cn\/api\/v4_1_0\/getGoodsHome|https?:\/\/book\.yunpub\.cn\/api\/v4_1_0\/getHomeMore|https?:\/\/book\.yunpub\.cn\/api\/v4_1_0\/getGoodsHome|https?:\/\/book\.yunpub\.cn\/api\/v4_1_0\/getGoodsHomeNew|https?:\/\/v\.yunpub\.cn\/api\/graphql*? url script-response-body https://raw.githubusercontent.com/hypsd/rules/main/zxsy.js
 
 
 [mitm]
