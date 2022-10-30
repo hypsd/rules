@@ -1,99 +1,26 @@
-{
-  "rules" : [
-    {
-      "action" : "body",
-      "matchField" : "",
-      "field" : "",
-      "value" : "\"vip_forever\":\"true",
-      "matchValue" : "\"vip_forever\":\"false",
-      "destiontion" : "response",
-      "isRegex" : true
-    },
-    {
-      "action" : "body",
-      "matchField" : "",
-      "field" : "",
-      "value" : "free\":\"true",
-      "matchValue" : "free\":\"false",
-      "destiontion" : "response",
-      "isRegex" : true
-    },
-    {
-      "action" : "body",
-      "matchField" : "",
-      "field" : "",
-      "value" : "end_at\":\"2025-03-01 15:29:41\"",
-      "matchValue" : "end_at\":\"\"",
-      "destiontion" : "response",
-      "isRegex" : true
-    },
-    {
-      "action" : "body",
-      "matchField" : "",
-      "field" : "",
-      "value" : "\"vip_over_days\":999",
-      "matchValue" : "\"vip_over_days\":\\d",
-      "destiontion" : "response",
-      "isRegex" : true
-    },
-    {
-      "action" : "body",
-      "matchField" : "",
-      "field" : "",
-      "value" : "vip_over_time\":\"2025-03-01 15:29:41\"",
-      "matchValue" : "vip_over_time\":\"\"",
-      "destiontion" : "response",
-      "isRegex" : true
-    },
-    {
-      "action" : "body",
-      "matchField" : "",
-      "field" : "",
-      "value" : "\"vip_type\":\"forever\"",
-      "matchValue" : "\"vip_type\":\"\"",
-      "destiontion" : "response",
-      "isRegex" : true
-    },
-    {
-      "action" : "body",
-      "matchField" : "",
-      "field" : "",
-      "value" : "\"vip_status_text\":\"永久会员\"",
-      "matchValue" : "\"vip_status_text\":\"\\w+\"",
-      "destiontion" : "response",
-      "isRegex" : true
-    }
-  ],
-  "enabled" : true,
-  "name" : "Now冥想 A+",
-  "description" : "Now冥想-改善睡眠和提升专注 来自 Xian iBetterLife Information Technology Co., Ltd. https:\/\/apps.apple.com\/cn\/app\/now%E5%86%A5%E6%83%B3-%E6%94%B9%E5%96%84%E7%9D%A1%E7%9C%A0%E5%92%8C%E6%8F%90%E5%8D%87%E4%B8%93%E6%B3%A8\/id1048518210",
-  "locations" : [
-    {
-      "method" : "GET",
-      "scheme" : "https",
-      "enabled" : true,
-      "port" : 443,
-      "query" : "",
-      "host" : "nowapi.navoinfo.cn",
-      "path" : "\/user"
-    },
-    {
-      "method" : "GET",
-      "scheme" : "https",
-      "enabled" : true,
-      "port" : 443,
-      "query" : "",
-      "host" : "nowapi.navoinfo.cn",
-      "path" : "\/get_sections_list_*"
-    },
-    {
-      "method" : "POST",
-      "scheme" : "https",
-      "enabled" : true,
-      "port" : 443,
-      "query" : "",
-      "host" : "nowapi.navoinfo.cn",
-      "path" : "\/my_vip"
-    }
-  ]
-}
+/******************************
+⚠️如果放远程，请把now.js替换成运程链接⚠️
+  🧚🏻‍♂️作者：🍡魔法师、木木🍡
+  wx交流群：1077223830
+🫧脚本名称:Now冥想 A+
+🫧建议配合working copy一起食用
+✈️working copy下载地址https://apps.apple.com/app/id896694807✈️
+*******************************
+
+[rewrite_local]
+^https?:\/\/nowapi\.navoinfo\.cn\/user|https?:\/\/nowapi\.navoinfo\.cn\/get_sections_list_*|https?:\/\/nowapi\.navoinfo\.cn\/my_vip*? url script-response-body https://raw.githubusercontent.com/hypsd/rules/main/now.js
+
+
+[mitm]
+hostname = nowapi.navoinfo.cn,nowapi.navoinfo.cn,nowapi.navoinfo.cn
+
+*******************************/
+var body=$response.body;
+body = body.replace(/"vip_forever\":"false/g,'"vip_forever":"true');
+body = body.replace(/free\":"false/g,'free":"true');
+body = body.replace(/end_at\":""/g,'end_at":"2025-03-01 15:29:41"');
+body = body.replace(/"vip_over_days\":\d/g,'"vip_over_days":999');
+body = body.replace(/vip_over_time\":""/g,'vip_over_time":"2025-03-01 15:29:41"');
+body = body.replace(/"vip_type\":""/g,'"vip_type":"forever"');
+body = body.replace(/"vip_status_text\":"\w+"/g,'"vip_status_text":"永久会员"');
+$done(body);
