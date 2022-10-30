@@ -1,29 +1,20 @@
-/*
- *
- *
-脚本功能：拦截100解锁超级会员
-软件版本：3.0.2【最高支持版本】
-下载地址：<a href='<a href='<a href='http://t.cn/A6MLFAJf' target='_blank'>http://t.cn/A6MLFAJf</a>' target='_blank'>http://t.cn/A6MLFAJf</a>' target='_blank'>http://t.cn/A6MLFAJf</a>
-脚本作者：Hausd0rff
-更新时间：2022-02-15
-电报频道：<a href='<a href='<a href='https://t.me/yqc_123' target='_blank'>https://t.me/yqc_123</a>' target='_blank'>https://t.me/yqc_123</a>' target='_blank'>https://t.me/yqc_123</a>
-问题反馈：<a href='<a href='<a href='https://t.me/yqc_777' target='_blank'>https://t.me/yqc_777</a>' target='_blank'>https://t.me/yqc_777</a>' target='_blank'>https://t.me/yqc_777</a>
-使用声明：⚠️此脚本仅供学习与交流，
-        请勿转载与贩卖！⚠️⚠️⚠️
+/******************************
+⚠️如果放远程，请把piano.js替换成运程链接⚠️
+  🧚🏻‍♂️作者：🍡魔法师、木木🍡
+  wx交流群：1077223830
+🫧脚本名称:Simply Piano 快速学习钢琴 解锁限制 A+
+🫧建议配合working copy一起食用
+✈️working copy下载地址https://apps.apple.com/app/id896694807✈️
 *******************************
 
 [rewrite_local]
-
-^https?:\/\/asla\.joytunes\.com\/443\/server\/asla\/accounts\/* url script-response-body https://raw.githubusercontent.com/hypsd/rules/main/simplypiano.js 
-[mitm] 
-hostname = *.joytunes.*
-*
-*
-*/
+^https?:\/\/asla\.joytunes\.com\/server\/asla\/accounts\/**? url script-response-body piano.js
 
 
+[mitm]
+hostname = asla.joytunes.com
+
+*******************************/
 var body=$response.body;
-body=body.replace(/membershipInfo":\{[^}]+\}/g,'membershipInfo":{"familyIapID":"com.joytunes.asla.subscriptiononeyear_trial_family","membershipTier":"premium_home","planDuration":"oneyear","membershipType":"SPONLY","daysRemaining":737,"autoRenewable":1,"dateStarted":"2020-02-23","isTrialPeriod":1,"currentIapID":"com.joytunes.asla.subscriptiononeyear_trial_individual","dateExpire":"2099-03-01","membershipDescription":"高级会员","isAutoRenew":null}');
-$done({ 
-    body 
-});
+body = body.replace(/membershipInfo\":\{[^}]+\}/g,'membershipInfo":{"familyIapID":"com.joytunes.asla.subscriptiononeyear_trial_family","membershipTier":"premium_home","planDuration":"oneyear","membershipType":"SPONLY","daysRemaining":737,"autoRenewable":1,"dateStarted":"2020-02-23","isTrialPeriod":1,"currentIapID":"com.joytunes.asla.subscriptiononeyear_trial_individual","dateExpire":"2099-03-01","membershipDescription":"高级会员","isAutoRenew":null}');
+$done(body);
