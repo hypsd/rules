@@ -8,7 +8,7 @@
 *******************************
 
 [rewrite_local]
-^https?:\/\/api-production\.endel\.io\/v1\/user*? url script-response-body endel.js
+^https?:\/\/api-production\.endel\.io\/v1\/user*? url script-response-body https://github.com/hypsd/rules/blob/main/endel.js
 
 
 [mitm]
