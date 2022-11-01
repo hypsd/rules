@@ -1,8 +1,7 @@
 
 
 [rewrite_local]
-^https?:\/\/api-production\.endel\.io\/v1\/user*? url script-response-body <a href='https://raw.githubusercontent.com/hypsd/rules/main/endel.js' target='_blank'>https://raw.githubusercontent.com/hypsd/rules/main/endel.js</a>
-
+^https?:\/\/api-production\.endel\.io\/v1\/user*? url https://raw.githubusercontent.com/hypsd/rules/main/endel.js
 
 [mitm]
 hostname = api-production.endel.io
